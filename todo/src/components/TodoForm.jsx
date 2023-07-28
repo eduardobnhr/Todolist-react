@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function TodoForm() {
+function TodoForm({addTodo}) {
 
     const [value, setValue] = useState("");
     const [category, setCategory] = useState("");
@@ -8,13 +8,12 @@ function TodoForm() {
     const handleSubmit = (e) => {
       e.preventDefault();
       if(!value ||category)return;
+        addTodo(value, category)
         //adicionar todo
         setValue("");
         setCategory("");
         //limpar os campos 
     };
-
-
   return (
   <div className="todo-form">
     <h2>Criar tarefa: </h2>
