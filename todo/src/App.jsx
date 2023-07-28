@@ -20,19 +20,31 @@ function App() {
       isCompleted: false,
     },
   ])
+  const addTodo = (text, category) => {
+    const newTodos = [//recebe por spread todos os 'todos' atuais
+      ...todos, {
+        id: Math.floor(Math.random() * 10000),
+        text,
+        category,
+        isCompleted: false,
+      },
+    ];
+    setTodos(newTodos);
+  }
+
 
   return (
     <div className="app">
       <h1>Lista de tarefas</h1>
       <div className="todo-list">
         {todos.map((todo) => (
-          <Todo todo ={todo} /> 
+          <Todo key={todo.id} todo={todo} />
         ))}
       </div>
       <TodoForm />
     </div>
   );
-  
+
 }
 
 export default App

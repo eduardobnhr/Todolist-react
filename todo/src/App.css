@@ -41,6 +41,15 @@ button{
 button:hover{
   opacity: 1;
 }
+
+.complete{
+  background-color: #5cb85c;
+}
+.remove{
+  background-color: #c40d07;
+}
+
+
 .todo-form{
   padding-bottom: 1.5rem;
 }
